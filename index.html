@@ -6,6 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K.M. TRADERS - Premium Luxury Food Store</title>
     <style>
+        /* ================= PREMIUM ANIMATIONS ================= */
+
+/* Fade + Slide on Scroll */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Floating 3D Cards */
+@keyframes floatCard {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.product-card,
+.feature-card,
+.testimonial-card,
+.stat-item {
+    animation: floatCard 5s ease-in-out infinite;
+}
+
+/* Soft Gold Glow */
+.gold-glow {
+    box-shadow: 0 0 10px rgba(212,175,55,0.15);
+    transition: all 0.3s ease;
+}
+
+.gold-glow:hover {
+    
         * {
             margin: 0;
             padding: 0;
@@ -851,7 +887,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero fade-up">
         <div class="hero-container">
             <div class="hero-image"></div>
             <h1>Freshness You Can Trust.<br>Quality You Can Taste.</h1>
@@ -864,7 +900,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats fade-up">
         <div class="stats-container">
             <div class="stat-item">
                 <div class="stat-number">5000+</div>
@@ -886,7 +922,7 @@
     </section>
 
     <!-- Heritage Section -->
-    <section id="heritage" class="heritage">
+    <section id="heritage" class="heritage fade-up">
         <div class="heritage-container">
             <div class="heritage-content">
                 <h2>The Heritage of K.M. TRADERS</h2>
@@ -912,14 +948,14 @@
     </section>
 
     <!-- Collections Section -->
-    <section id="collections" class="collections">
+    <section id="collections" class="collections fade-up">
         <div class="collections-container">
             <h2 class="section-title">Our Curated Collections</h2>
             <p class="section-subtitle">Exceptional quality that speaks for itself.</p>
             
             <div class="products-grid">
                 <!-- Product 1 -->
-                <div class="product-card">
+                <div class="product-card fade-up gold-glow">
                     <div class="product-image">
                         <div class="product-badge">BESTSELLER</div>
                     </div>
@@ -934,7 +970,7 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card">
+                <div class="product-card fade-up gold-glow">
                     <div class="product-image">
                         <div class="product-badge">RARE</div>
                     </div>
@@ -949,7 +985,7 @@
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card">
+                <div class="product-card fade-up gold-glow">
                     <div class="product-image"></div>
                     <div class="product-content">
                         <div class="product-name">Exotic Date Box</div>
@@ -962,7 +998,7 @@
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product-card">
+                <div class="product-card fade-up gold-glow">
                     <div class="product-image"></div>
                     <div class="product-content">
                         <div class="product-name">Royal Garam Masala</div>
@@ -983,17 +1019,17 @@
             <h2 class="section-title">Why Choose K.M. TRADERS</h2>
             
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card fade-up gold-glow">
                     <div class="feature-card-icon">💎</div>
                     <h3>Premium Quality</h3>
                     <p>We only source Grade-A produce that meets our stringent international standards.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card fade-up gold-glow">
                     <div class="feature-card-icon">🌿</div>
                     <h3>Fresh Stock</h3>
                     <p>Weekly replenishment ensures you always get the harvest-fresh taste every time.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card fade-up gold-glow">
                     <div class="feature-card-icon">🛡️</div>
                     <h3>Secure Packaging</h3>
                     <p>Our signature glassmorphic tins and vacuum seals keep aroma and crunch locked in.</p>
@@ -1008,7 +1044,7 @@
             <h2 class="section-title">The World Speaks for Us</h2>
             
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-up gold-glow">
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">"The quality of Medjool dates from K.M. Traders is unmatched. They are soft, sweet, and perfectly packed. A staple in our home now."</p>
                     <div class="testimonial-author">
@@ -1020,7 +1056,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+            <div class="testimonial-card fade-up gold-glow">
                     <div class="stars">★★★★★</div>
                     <p class="testimonial-text">"Being a chef, I am picky about spices. Their Royal Garam Masala changed my kitchen game. Authentic and robust flavor profile."</p>
                     <div class="testimonial-author">
@@ -1032,7 +1068,7 @@
                     </div>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card fade-up gold-glow">
                     <div class="stars">★★★★☆</div>
                     <p class="testimonial-text">"The gifting box corporate client about the premium packaging and freshness. Perfect for gifting to your loved ones."</p>
                     <div class="testimonial-author">
@@ -1048,7 +1084,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact fade-up">
         <div class="contact-container">
             <div class="contact-content">
                 <h2>Let's Connect</h2>
@@ -1203,6 +1239,18 @@
                 }
             });
         });
+        // Fade-up animation on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-up').forEach(el => {
+    observer.observe(el);
+});
     </script>
 </body>
 </html>
